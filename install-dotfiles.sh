@@ -25,11 +25,12 @@ fi
 # Check if the clone was successful
 if [ $? -eq 0 ]; then
   echo "removing old configs"
-  rm -rf ~/.config/opencode/opencode.json ~/.config/waybar
+  rm -rf ~/.config/opencode/opencode.json ~/.config/waybar ~/.config/discord/settings.json
 
   cd "$REPO_NAME"
   stow opencode
   stow waybar
+  stow discord
 else
   echo "Failed to clone the repository."
   exit 1
